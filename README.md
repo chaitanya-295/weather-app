@@ -85,7 +85,12 @@ Create .env file:
 
     API_KEY=your_openweather_api_key
     
-    MONGO_URI=your_mongodb_connection_string
+    PORT=your_port_number
+    
+    SUPABASE_URL=your-project-url
+    
+    SUPABASE_KEY=your-anon-key
+
 
 Run backend:
 
