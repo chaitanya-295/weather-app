@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  transition: all 0.25s ease-in-out;
+}
+
+/* 🌧 Rain */
+.rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://i.imgur.com/NM6GJ7L.png");
+  animation: rain 0.4s linear infinite;
+  opacity: 0.15; /* lighter */
+  pointer-events: none; /* allow clicks */
+  z-index: -1; /* send behind UI */
+}
+
+@keyframes rain {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}
+
+/* ❄ Snow */
+.snow {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url("https://i.imgur.com/5b3e1.png");
+  animation: snow 15s linear infinite;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes snow {
+  from { background-position: 0 0; }
+  to { background-position: 0 1000px; }
+}
+
+/* ☁ Cloudy */
+.cloudy {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* ☀ Clear */
+.clear {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #dbeafe, #93c5fd);
+  z-index: -1;
+}
+
+.dark .clear {
+  background: linear-gradient(to bottom, #0f172a, #020617);
+}
+
+.dark .cloudy {
+  background: linear-gradient(to bottom, #1e293b, #020617);
+}
+
+* {
+  transition: background 0.3s, color 0.3s;
+}
+
+.fade-bottom {
+  mask-image: linear-gradient(to bottom, black 80%, transparent);
+}
+
+.glass {
+  @apply bg-white/60 dark:bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.15)];
+}
+
+.mini-card {
+  @apply bg-white/40 dark:bg-white/10 rounded-xl p-2 text-center;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
