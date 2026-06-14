@@ -34,7 +34,7 @@ A full-stack weather forecasting web application that provides real-time weather
 - Express.js
 
 ### 🗄 Database
-- MongoDB (Mongoose)
+- Supabase
 
 ### 🌐 API
 - OpenWeatherMap API
