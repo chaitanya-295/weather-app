@@ -114,6 +114,7 @@ app.get("/api/favorites", protect, async (req, res) => {
     if (error) throw error;
     res.json(data);
   } catch (err) {
+    console.error("GET /api/favorites error:", err);
     res.status(500).json({ error: "Failed to fetch favorites" });
   }
 });
@@ -139,6 +140,7 @@ app.post("/api/favorites", protect, async (req, res) => {
     if (error) throw error;
     res.json(fav);
   } catch (err) {
+    console.error("POST /api/favorites error:", err);
     res.status(500).json({ error: "Failed to add favorite" });
   }
 });
@@ -155,6 +157,7 @@ app.delete("/api/favorites", protect, async (req, res) => {
     if (error) throw error;
     res.json({ message: "Removed from favorites" });
   } catch (err) {
+    console.error("DELETE /api/favorites error:", err);
     res.status(500).json({ error: "Delete failed" });
   }
 });
@@ -172,6 +175,7 @@ app.get("/api/history", protect, async (req, res) => {
     if (error) throw error;
     res.json(data);
   } catch (err) {
+    console.error("GET /api/history error:", err);
     res.status(500).json({ error: "Failed to fetch history" });
   }
 });
@@ -191,6 +195,7 @@ app.post("/api/history", protect, async (req, res) => {
     if (error) throw error;
     res.json(updatedHistory);
   } catch (err) {
+    console.error("POST /api/history error:", err);
     res.status(500).json({ error: err.message });
   }
 });
